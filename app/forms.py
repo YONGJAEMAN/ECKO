@@ -21,5 +21,7 @@ class RegisterForm(FlaskForm):
     sumbit = SubmitField('Registetr')
 
     def user_validation(self, username):
+        pass
+        pass
     
 

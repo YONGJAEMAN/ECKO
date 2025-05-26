@@ -14,7 +14,7 @@ login.login_view='login'
 #migrate represents the migration engine
 from app import routes, models
 
-if __name__ == "__main__":
-    app.run(debug=True)
+#if __name__ == "__main__":
+#    app.run(debug=True) 
 
     ##Also need to enter 'flask run --debug --reload' to see changes.

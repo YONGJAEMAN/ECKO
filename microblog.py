@@ -12,4 +12,5 @@ def make_shell_context():
 
     return {'sa':sa, 'so': so, 'db': db, 'User':User, 'Post':Post, 'sa_version':sa_version}
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
