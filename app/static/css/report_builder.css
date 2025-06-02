@@ -1,0 +1,178 @@
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5em;
+}
+
+/* report builder */
+.report-builder-body {
+  background-color: #0d0b33;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+}
+
+.report-builder-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2em;
+
+}
+.page-title {
+  font-size: 1.8em;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #3c3c78;
+  background-color: transparent;
+  color: #fff;
+  font-size: 0.95em;
+}
+
+.textarea-field {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.checkbox-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  font-size: 0.9em;
+  color: #d0d0ff;
+  margin-bottom: 1em;
+}
+
+.checkbox-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.generate-btn {
+  background-color: #5a5ae6;
+  color: white;
+  font-size: 1em;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.generate-btn:hover {
+  background-color: #4b4bff;
+  transform: scale(1.02);
+}
+.report-output {
+  .report-output 
+  width: 100%;
+  max-width: 800px;
+  padding: 1.5em;
+  text-align: left;
+  margin: 3em;
+  color: #fff;
+  background-color: #0d0b33;
+  line-height: 1.6em;
+  border-radius: 10px;
+}
+
+.report-output-title {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.finding {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #2a2a5a;
+}
+
+.risk-high {
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.risk-medium {
+  color: #ffaa00;
+  font-weight: bold;
+}
+
+.risk-critical {
+  color: #ff0033;
+  font-weight: bold;
+}
+.export-share-section {
+  margin-top: 4em;
+  text-align: center;
+}
+
+.export-share-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #ffffff;
+}
+
+.export-share-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.export-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #e6e6ff;
+}
+
+.menu-icon {
+  font-size: 1.2em;
+  color: #a8a8ff;
+}
+
+.export-btn {
+  background-color: white;
+  color: #000;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.export-btn:hover {
+  background-color: #e0e0ff;
+}
+
+.share-icon {
+  font-size: 1.2em;
+}
+
+.share-label {
+  font-size: 1em;
+}

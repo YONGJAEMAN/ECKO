@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_page.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/help_page.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/risk_list.css') }}">
-    
+
 
     {% if title %}
         <title> {{title}} --Miniblog</title>
@@ -18,8 +13,8 @@
         <title> Guest's --Miniblog</title>
     {% endif %}
 </head>
-
-<body id="base-body-main">
+    
+<body id="base-body-main"  style="background-color: #0d0b33;">
     <div id="page-container">
     <header id="base-header-container">
         <nav id="base-header-wrapper" style="width: 100%;">
@@ -38,9 +33,6 @@
                     <li><a class="header-list-text" href="{{ url_for('home_page') }}">Home Page</a></li>
                     <li><a class="header-list-text" href="{{ url_for('index') }}">Main Page</a></li>
                     <li><a class="header-list-text" href="{{ url_for('help_page') }}">Tutorials</a></li>
-                    <li><a class="header-list-text" href="{{ url_for('risk') }}">Risk List</a></li>
-                    <li><a class="header-list-text" href="{{ url_for('report_builder') }}">Report Builder</a></li>
-
                 </div>
 
                 <div class="user_sign_in_up_button_group">
@@ -70,6 +62,118 @@
 
     <!-- The 'block' control statement define the place where derived templates can be inserted-->
      <main style="flex: 1; margin-top: 5em;">
+        
+        <div class="help_page_main_container">
+            <div class="feature-section-container">
+                <section class="bulk-management">
+                     <h2>Risks List</h2>
+
+                <div class="scan-info-container">
+                     <button class="scan-info-button">Severity: High</button>
+                     <button class="scan-info-button">Target Web Application</button>
+                     <button class="scan-info-button">Scan Date: Today</button>
+                     <button class="scan-info-button">Status: Active</button>
+                </div>
+
+                <div id="tutorial-box-container">
+  <div class="tut-box">
+    <picture>
+      <img src="/static/images/SQLi_image.png" alt="SQLi image" />
+    </picture>
+    <p class="box-header-tag">SQL Injection</p>
+    <p class="box-description">
+      Affected URL: /login<br>
+      Exploitability: High
+    </p>
+    <a href="/static/images/gif/cat.gif"><button class="details-button">View Details</button></a>
+  </div>
+
+  <div class="tut-box">
+    <picture>
+      <img src="/static/images/calender-tip-image.png" alt="XSS image" />
+    </picture>
+    <p class="box-header-tag">XSS Attack</p>
+    <p class="box-description">
+      Affected URL: /comments<br>
+      Exploitability: Medium
+    </p>
+    <a href="/static/images/gif/cat.gif"><button class="details-button">View Details</button></a>
+  </div>
+
+  <div class="tut-box">
+    <picture>
+      <img src="/static/images/Sensitive_data_image.png" alt="Sensitive data image" />
+    </picture>
+    <p class="box-header-tag">Sensitive Data</p>
+    <p class="box-description">
+      Affected URL: /api/user-info<br>
+      Exploitability: High
+    </p>
+    <a href="/static/images/gif/cat.gif"><button class="details-button">View Details</button></a>
+  </div>
+
+  <div class="tut-box">
+    <picture>
+      <img src="/static/images/Broken_auth_image.png" alt="Broken auth image" />
+    </picture>
+    <p class="box-header-tag">Broken Auth</p>
+    <p class="box-description">
+      Affected URL: /account/login<br>
+      Exploitability: Critical
+    </p>
+    <a href="/static/images/gif/cat.gif"><button class="details-button">View Details</button></a>
+  </div>
+</div>
+
+
+<section class="bulk-management">
+  <h2>Bulk Management Options</h2>
+<div class="bulk-actions-wrapper">
+  <div class="checkbox-list">
+    <label><input type="checkbox"> Risk 1</label>
+    <label><input type="checkbox"> Risk 2</label>
+    <label><input type="checkbox"> Risk 3</label>
+  </div>
+
+  <div class="bulk-btns">
+    <button class="bulk-btn">Bulk Assign</button>
+    <button class="bulk-btn">Mark as resolved</button>
+    <button class="bulk-btn">Export to ticketing systems</button>
+  </div>
+  </div>
+</section>
+    
+    <section class="trend-view">
+    <h2><label style="color: #e8e8ff;font-family: Helvetica;"><label></label>Risk Trends View</h2>
+
+    <div class="trend-group">
+        <h3><label style="color: #e8e8ff;font-family: Helvetica;"><label></label>Trend Line Chart 1</h3>
+        <div class="tooltip-trends">
+            <strong>Tooltip Trends:</strong>
+            <p>Severity level 2 / Ongoing</p>
+            <p>Severity level 3 / Vulnerability detected</p>
+        </div>
+    </div>
+
+    <div class="trend-group">
+        <h3><label style="color: #e8e8ff;font-family: Helvetica;"><label></label>Trend Line Chart 2</h3>
+        <div class="tooltip-trends">
+            <strong>Tooltip Trends:</strong>
+            <p>Severity level 2</p>
+            <p>Severity level 4 / High</p>
+        </div>
+    </div>
+
+    <div class="trend-group">
+        <h3><label style="color: #e8e8ff;font-family: Helvetica;"><label></label>Trend Line Chart 3</h3>
+        <div class="tooltip-trends">
+            <strong>Tooltip Trends:</strong>
+            <p>Severity level 2 / Ongoing</p>
+            <p>Severity level 3 / High</p>
+        </div>
+    </div>
+    </section>
+
         {% block content %}{% endblock %} 
      </main>  
      

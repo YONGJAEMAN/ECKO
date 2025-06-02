@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risks List - EKHO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/risklist.css') }}">
+</head>
+<body>
+    <div id="page-container">
+        <header id="base-header-container">
+            <nav id="base-header-wrapper">
+                <ul id="base-header-list">
+                    <li class="logo-image-container">
+                        <img src="{{ url_for('static', filename='images/ecko_logo.png') }}" alt="EKHO logo">
+                    </li>
+                    <li><a class="header-list-text" href="#">Risks List</a></li>
+                    <li><a class="header-list-text" href="#">Risk Trends</a></li>
+                    <li><a class="header-list-text" href="#">Settings</a></li>
+                    <!-- Add user icon and filter icon as needed -->
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="risks-list-header">
+                <h1>Risks List</h1>
+                <div class="risk-tags">
+                    <span class="tag danger">Severity: High</span>
+                    <span class="tag">Target: Web Application</span>
+                    <span class="tag">Scan Date: Today</span>
+                    <span class="tag active">Status: Active</span>
+                </div>
+            </section>
+
+            <section class="risk-cards-container">
+                {% for risk in risks %}
+                <div class="risk-card">
+                    <img src="{{ url_for('static', filename=risk.image) }}" alt="{{ risk.title }}">
+                    <h3>{{ risk.title }}</h3>
+                    <p><strong>Affected URL:</strong> {{ risk.url }}</p>
+                    <p><strong>Exploitability:</strong> {{ risk.exploitability }}</p>
+                    <button class="details-button">View Details</button>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section class="bulk-management">
+                <h2>Bulk Management Options</h2>
+                <div class="checkbox-list">
+                    <label><input type="checkbox"> Risk 1</label>
+                    <label><input type="checkbox"> Risk 2</label>
+                    <label><input type="checkbox"> Risk 3</label>
+                </div>
+                <div class="bulk-buttons">
+                    <button>Bulk Assign</button>
+                    <button>Mark as resolved</button>
+                    <button>Export to ticketing systems</button>
+                </div>
+            </section>
+
+            <section class="trend-view">
+                <h2>Risk Trends View</h2>
+                <h3>Trend Line Chart 1</h3>
+                <!-- Chart library placeholder -->
+            </section>
+        </main>
+
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>

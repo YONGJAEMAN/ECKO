@@ -1,0 +1,111 @@
+.risks-list-header {
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+}
+
+.risk-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.tag {
+    background-color: #2a2a3b;
+    padding: 0.4em 1em;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.tag.danger {
+    background-color: #cc2233;
+    color: white;
+}
+
+.tag.active {
+    background-color: #5a3fff;
+    color: white;
+}
+
+.risk-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.risk-card {
+    background-color: #0d0b33;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 1em;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.risk-card:hover {
+    transform: translateY(-4px);
+}
+
+.risk-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+}
+
+.details-button {
+    background-color: transparent;
+    border: 1px solid #6c47ff;
+    color: #6c47ff;
+    border-radius: 6px;
+    padding: 0.4em 1em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.details-button:hover {
+    background-color: #6c47ff;
+    color: white;
+}
+
+.bulk-management {
+    text-align: center;
+    margin: 3em 0;
+    color: white;
+}
+
+.checkbox-list {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 1em 0;
+}
+
+.bulk-buttons button {
+    margin: 0 0.5em;
+    padding: 0.6em 1em;
+    background-color: transparent;
+    border: 1px solid #5a3fff;
+    color: #5a3fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bulk-buttons button:hover {
+    background-color: #5a3fff;
+    color: white;
+}
+
+.trend-view {
+    text-align: center;
+    margin: 3em 0;
+    color: white;
+}

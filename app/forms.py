@@ -23,5 +23,4 @@ class RegisterForm(FlaskForm):
     def user_validation(self, username):
         pass
         pass
-    
 

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+            {% block content %}
+            <div class="about-us">
+                <h2>About Us</h2>
+                <p>We are a team passionate about cybersecurity, leveraging cutting-edge technology to protect your digital assets. Our mission is to provide innovative solutions that keep you ahead of threats.</p>
+            </div>
+
+            <div class="vision-mission">
+                <div>
+                    <h3>Vision</h3>
+                    <p>To lead the future of cybersecurity with innovative and adaptive solutions.</p>
+                </div>
+                <div>
+                    <h3>Mission</h3>
+                    <p>To empower organizations with tools and insights to mitigate risks effectively.</p>
+                </div>
+            </div>
+
+            <div class="our-team">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='images/team1.png') }}" alt="Team Member" style="width: 100px; height: 100px; background-color: #ccc; border-radius: 50%; margin-bottom: 10px;">
+                        <h4>Connor Henderson</h4>
+                        <p>CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='images/team2.png') }}" alt="Team Member" style="width: 100px; height: 100px; background-color: #ccc; border-radius: 50%; margin-bottom: 10px;">
+                        <h4>Abigal Rawlins</h4>
+                        <p>CTO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='images/team3.png') }}" alt="Team Member" style="width: 100px; height: 100px; background-color: #ccc; border-radius: 50%; margin-bottom: 10px;">
+                        <h4>Andrew Lee</h4>
+                        <p>Lead Developer</p>
+                    </div>
+                       <div class="team-member">
+                        <img src="{{ url_for('static', filename='images/team2.png') }}" alt="Team Member" style="width: 100px; height: 100px; background-color: #ccc; border-radius: 50%; margin-bottom: 10px;">
+                        <h4>Yong Lee</h4>
+                        <p>CTO</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="join-team">
+                <h2>Join Our Team</h2>
+                <p>We are always looking for talented individuals to join our mission. Explore opportunities and grow with us!</p>
+                <a href="{{ url_for('contact') }}" class="join-button">Join Now</a>
+            </div>
+            {% endblock %}
+        </main>
