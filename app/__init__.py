@@ -22,5 +22,3 @@ from app import routes, models
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-    ##Also need to enter 'flask run --debug --reload' to see changes.

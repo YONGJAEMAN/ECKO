@@ -78,7 +78,7 @@
     <footer>
         <div class="footer-main">
             <div class="footer-main-upper-information">
-                <div id="ecko-logo-footer">
+                <div id="ecko-logo-footer" style="padding-top: 1em;">
                     <img srcset="{{ url_for('static', filename='images/ecko_logo.png')}}" alt="ecko_logo">
                 </div>
 
@@ -100,10 +100,13 @@
                     <p class="footer-info-title">Company</p>
         <p>About us</p>
                 </div>
-                <div id="subscription-footer-grid-section-wrapper">
+                <div id="subscription-footer-grid-section-container">
+                    <div>
                     <p>Subscribe to our newsletter</p>
-                    <p>To keep up with the latest Vulnerability trends</p>
-                    <form>
+                    <p style="margin-top: -1em; margin-bottom: 2em;">To keep up with the latest Vulnerability trends</p>
+                    </div>
+
+                    <form id="footer-user-subscription">
                         <input placeholder="Input Your Email">
                         <button> Subscribe</button>
                     </form>
@@ -113,7 +116,8 @@
     <div class="footer-main-lower-information">
       <p class="ecko-slogan-tag">Vulnerability Detection that Resonates</p>
                <div class="footer-bottom-section">
-                <p style="color:#7b8391;">Established 1579</p>
+                <div style="color: #010024">dontremove</div>
+                <p style="color:#7b8391; font-size: xx-small;">Established 1579</p>
                 <div class="social-media-svg-container">
                     <picture class="social-media-icon facebook">
                         <source srcset="https://img.icons8.com/color/48/facebook-new.png" type="image/png+xml">
