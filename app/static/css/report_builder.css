@@ -85,7 +85,6 @@ main {
   transform: scale(1.02);
 }
 .report-output {
-  .report-output 
   width: 100%;
   max-width: 800px;
   padding: 1.5em;

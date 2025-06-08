@@ -59,7 +59,7 @@ def login():
     return render_template('login.html', title='login page', form=form)
 
 @app.route("/risks")
-def show_risks():
+def risks():
     risks = [
         {
             'title': 'SQL Injection',
