@@ -82,9 +82,10 @@
 }
 
 .risk-card img {
-  max-width: 100%;
+  width: 100%;
+  height: 160px;           /* 원하는 고정 높이로 조정 가능 */
+  object-fit: cover;       /* 이미지가 비율 유지하며 채워짐 */
   border-radius: 8px;
-  margin-bottom: 0.5em;
 }
 
 .details-button {
@@ -171,37 +172,64 @@
 
 /* Trend View Section */
 .trend-view {
-  padding: 2em;
-  color: #f1f1f1;
-  text-align: center;
+    padding: 3em 2em;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 3em auto;
+    color: #e8e8ff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
 }
 
-.trend-view h2 {
-  font-size: 1.8em;
-  font-weight: bold;
-  margin-bottom: 2em;
+.trend-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2em;
+    color: #ffffff;
+}
+
+.trend-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: #ccccff;
+    text-align: center;
 }
 
 .trend-group {
-  margin-bottom: 2em;
-  padding-left: 1em;
-  border-left: 2px solid #4b4be1;
-}
-
-.trend-group h3 {
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
-  color: #ffffff;
+    margin-bottom: 2em;
+    padding: 1em 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(102, 82, 243, 0.08);
 }
 
 .tooltip-trends {
-  margin-left: 1em;
-  color: #d0d0ff;
+    margin-top: 0.5em;
 }
 
 .tooltip-trends p {
-  margin: 0.3em 0;
+    margin: 0.3em 0;
+    font-size: 1rem;
 }
+
+.trend-label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 600;
+    color: #c0c0ff;
+    font-size: 1rem;
+}
+
+.trend-topic {
+    display: block;
+    margin-top: 1em;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #aaaaff;
+}
+
 
 .scan-info-button {
   padding: 6px 16px;
@@ -258,7 +286,9 @@
 
 .tut-box picture img {
   width: 100%;
-  height: auto;
+  height: 160px;          
+  object-fit: cover;       
+  border-radius: 8px;
   border-radius: 8px;
   margin-bottom: 0.75rem;
 }

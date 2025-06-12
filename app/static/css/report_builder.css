@@ -89,7 +89,7 @@ main {
   max-width: 800px;
   padding: 1.5em;
   text-align: left;
-  margin: 3em;
+  margin: 3em 3em 3em 10em;
   color: #fff;
   background-color: #0d0b33;
   line-height: 1.6em;
@@ -124,6 +124,7 @@ main {
 }
 .export-share-section {
   margin-top: 4em;
+  margin-bottom: 10em;
   text-align: center;
 }
 
@@ -154,20 +155,19 @@ main {
 }
 
 .export-btn {
-  background-color: white;
-  color: #000;
-  padding: 0.6em 1.2em;
+  background-color: #5a5ae6;
+  color: white;
+  font-size: 1em;
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: 0.3s ease;
 }
 
 .export-btn:hover {
-  background-color: #e0e0ff;
-}
-
+  background-color: #4b4bff;
+  transform: scale(1.02);
 .share-icon {
   font-size: 1.2em;
 }

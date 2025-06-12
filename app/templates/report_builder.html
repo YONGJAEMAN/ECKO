@@ -75,7 +75,7 @@
   </div>
 </main>
         <!-- Report Output -->
-        <div class="report-output">
+        <div id="report-content" class="report-output">
           <h2 class="report-output-title">📋 Menu</h2>
 
           <div class="finding">
@@ -112,35 +112,74 @@
             <p>Tags: Internal, Private</p>
           </div>
         </div>
-  <section class="export-share-section">
-  <h2 class="export-share-title">Export & Share Options</h2>
-  <div class="export-share-options">
-    
-    <div class="export-item">
-      <span class="menu-icon">⋮⋮</span>
-      <button class="export-btn">Export to PDF</button>
+
+   <section class="export-share-section">
+      <h2 class="export-share-title">Export & Share Options</h2>
+      <div class="export-share-options">
+        <div class="export-item">
+          <span class="menu-icon">⋮⋮</span>
+          <button id="pdfExportButton" class="export-btn">Export to PDF</button>
+        </div>
+        <div class="export-item">
+          <span class="menu-icon">⋮⋮</span>
+          <button id="csvExportButton" class="export-btn">Export to CSV</button>
+        </div>
+        <div class="export-item">
+          <span class="menu-icon">⋮⋮</span>
+          <button id="emailShareButton" class="export-btn" type="button">📧 Share via Email</button>
+        </div>
+        <div class="export-item">
+          <span class="menu-icon">⋮⋮</span>
+          <button id="linkShareButton" class="export-btn">🔗 Share via Link</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📧 Email Popup HTML -->
+    <div class="email-popup-overlay" style="display: none;">
+      <div class="email-popup">
+        <h2>📧 Send Report via Email</h2>
+        <label for="email">Recipient Email</label>
+        <input type="email" id="email" placeholder="example@example.com" />
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Report Subject" />
+        <label for="message">Message (optional)</label>
+        <textarea id="message" placeholder="Add a personal message..."></textarea>
+        <div class="popup-actions">
+          <button class="cancel-btn" type="button">Cancel</button>
+          <button class="send-btn" type="button">Send Email</button>
+        </div>
+      </div>
     </div>
 
-    <div class="export-item">
-      <span class="menu-icon">⋮⋮</span>
-      <button class="export-btn">Export to CSV</button>
-    </div>
+  
+ <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <div class="export-item">
-      <span class="menu-icon">⋮⋮</span>
-      <span class="share-icon">📧</span>
-      <span class="share-label">Share via Email</span>
-    </div>
+    <!-- Custom Scripts -->
+    <script src="{{ url_for('static', filename='js/send_email.js') }}?v={{ random() }}"></script>
+    <script src="{{ url_for('static', filename='js/share_link.js') }}?v={{ random() }}"></script>
+    <script src="{{ url_for('static', filename='js/export_pdf_csv.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/email_popup.js') }}?v={{ random() }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.querySelector('.email-popup-overlay');
+        const openBtn = document.getElementById('emailShareButton');
+        const cancelBtn = document.querySelector('.cancel-btn');
 
-    <div class="export-item">
-      <span class="menu-icon">⋮⋮</span>
-      <span class="share-icon">🔗</span>
-      <span class="share-label">Share via Link</span>
-    </div>
+        if (openBtn && popup && cancelBtn) {
+          openBtn.addEventListener('click', () => {
+            popup.style.display = 'flex';
+          });
 
-  </div>
-</section>
-
+          cancelBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+          });
+        } else {
+          console.warn("???????????");
+        }
+      });
+    </script>
 
     <!-- Footer -->
     <hr id="main-page-footer-divider-tag" />
