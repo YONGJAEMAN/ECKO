@@ -1,135 +1,201 @@
 {% extends 'base.html' %}
 
-    {% block content %}
-        <div class="help_page_main_container">
-            <div class="feature-section-container">
-                <h1 class="help_text" style="justify-self: center;">Explore Tutorials and learn ECKO's Major Features</h1>
-                <div id="tutorial-box-container">
-                    <div class="tutorial-box1 tut-box">
-                        <picture>
-                            <source srcset="{{ url_for('static', filename='images/inbox-guide-image.png' )}}" type="image/png+xml">
-                            <img src="{{ url_for('static', filename='images/inbox-guide-image.png' )}}" alt="inbox-image"/>
-                        </picture>
-                        <p class="box-header-tag help_text">Quick Scan</p>
-                        <p class="box-description   help_text">Rapidly checks key areas.</p>
-                        <a href="https://www.youtube.com/watch?v=Gy-aPBb0djk" target="_blank">
-                        <button class="box-star-tut-button">Start Tutorial</button>
-                        </a>
-                    </div>
-                    <div class="tutorial-box2 tut-box">
-                        <picture>
-                            <source srcset="{{ url_for('static', filename='images/calender-tip-image.png' )}}" type="image/png+xml">
-                            <img src="{{ url_for('static', filename='images/calender-tip-image.png' )}}" alt="calender-image"/>
-                        </picture>
-                        <p class="box-header-tag help_text">Deep Scan</p>
-                        <p class="box-description help_text">Thorough system analysis.</p>
-                        <a href="{{ url_for('static',filename='images/gif/cat.gif')}}"><button class="box-star-tut-button">Start Tutorial</button></a>
-                    </div>
-                    <div class="tutorial-box3 tut-box">
-                        <picture>
-                            <source srcset="{{ url_for('static', filename='images/group-image.png' )}}" type="image/png+xml">
-                            <img src="{{ url_for('static', filename='images/group-image.png' )}}" alt="group-image"/>
-                        </picture>
-                        <p class="box-header-tag help_text">Custom Scan</p>
-                        <p class="box-description help_text">Select areas to scan.</p>
-                        <a href="{{ url_for('static',filename='images/gif/cat.gif')}}"><button class="box-star-tut-button">Start Tutorial</button></a>
-                    </div>  
-                </div>
+{% block content %}
+<div class="help_page_main_container">
+
+  <!-- 🔹 Tutorial Section -->
+  <div class="feature-section-container">
+    <h1 class="help_text" style="justify-self: center;">
+      Explore Tutorials and learn ECKO's Major Features
+    </h1>
+
+    <div id="tutorial-box-container" class="tutorial-container">
+
+      <!-- ▶ Quick Scan Card -->
+      <div class="tutorial-box1 tut-box">
+        <picture>
+          <source srcset="{{ url_for('static', filename='images/inbox-guide-image.png') }}" type="image/png+xml">
+          <img src="{{ url_for('static', filename='images/inbox-guide-image.png') }}" alt="inbox-image" />
+        </picture>
+        <p class="box-header-tag help_text">Quick Scan</p>
+        <p class="box-description help_text">Rapidly checks key areas.</p>
+        <button class="box-star-tut-button start-tutorial-btn" data-video-id="Gy-aPBb0djk?start=600">Start Tutorial</button>
+
+      </div>
+
+      <!-- ▶ Deep Scan Card -->
+      <div class="tutorial-box2 tut-box">
+        <picture>
+          <source srcset="{{ url_for('static', filename='images/calender-tip-image.png') }}" type="image/png+xml">
+          <img src="{{ url_for('static', filename='images/calender-tip-image.png') }}" alt="calender-image" />
+        </picture>
+        <p class="box-header-tag help_text">Deep Scan</p>
+        <p class="box-description help_text">Thorough system analysis.</p>
+        <button class="box-star-tut-button start-tutorial-btn" data-video-id="Gy-aPBb0djk?start=600">Start Tutorial</button>
+      </div>
+
+      <!-- ▶ Custom Scan Card -->
+      <div class="tutorial-box3 tut-box">
+        <picture>
+          <source srcset="{{ url_for('static', filename='images/group-image.png') }}" type="image/png+xml">
+          <img src="{{ url_for('static', filename='images/group-image.png') }}" alt="group-image" />
+        </picture>
+        <p class="box-header-tag help_text">Custom Scan</p>
+        <p class="box-description help_text">Select areas to scan.</p>
+       <button class="box-star-tut-button start-tutorial-btn" data-video-id="Gy-aPBb0djk?start=600">Start Tutorial</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🔹 Feature Buttons Section -->
+  <div id="help-section-2-search-container">
+    <div class="help-section-2-search-wrapper">
+      <input id="help-search" class="animate-on-scroll" placeholder="Search..." />
+
+      <div class="section2-button-box">
+        <h3 class="help_text">Getting Started</h3>
+        <p class="help_text">
+          Product security<br />
+          Article on securing our products
+        </p>
+        <button class="box-star-tut-button open-info-popup"
+          data-title="Getting Started"
+          data-content="Our 'Getting Started' guide walks you through the basics of ECKO's security model, how your data is protected, and how to configure initial protection for your environment. It includes essential checklists, links to best practices, and step-by-step onboarding instructions.">
+          Read More
+        </button>
+      </div>
+
+      <div class="section2-button-box">
+        <h3 class="help_text">Best Practices</h3>
+        <p class="help_text">
+          Data protection Policy<br />
+          Policy governing data security measures.
+        </p>
+        <button class="box-star-tut-button open-info-popup"
+          data-title="Best Practices"
+          data-content="Our Data Protection Policy outlines how user data is collected, stored, and encrypted. It explains internal access control, employee training, and our compliance with global standards such as ISO 27001 and GDPR.">
+          Read More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📺 YouTube Video Popup Modal -->
+  <div id="video-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-video-modal">&times;</span>
+      <iframe id="youtube-frame"
+        width="800"
+        height="450"
+        src=""
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="border-radius: 10px;"></iframe>
+    </div>
+  </div>
+
+  <!-- 📰 Info Text Popup Modal -->
+  <div id="info-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-info-modal">&times;</span>
+      <h2 id="info-modal-title" class="help_text" style="margin-bottom: 1em;"></h2>
+      <p id="info-modal-content" class="help_text" style="line-height: 1.6;"></p>
+    </div>
+  </div>
+
+  <!-- 🧠 Glossary Section -->
+  <div id="help-section-3-glossary-container" class="glossary-section animate-on-scroll">
+    <h2 class="glossary-title help_text">📘 Glossary – Key Terms</h2>
+
+    <!-- Letter A -->
+    <div class="glossary-letter-section">
+      <h3 class="glossary-letter">A</h3>
+      <div class="glossary-card-grid">
+        <div class="glossary-card"><h4>🛡️ Administrative Security</h4><p>Policies and actions to manage and reduce organizational security risks.</p></div>
+        <div class="glossary-card"><h4>🧼 Anti-Malware</h4><p>Software to detect and remove malicious programs from systems.</p></div>
+        <div class="glossary-card"><h4>🧠 Awareness Training</h4><p>Security education programs for employees and users.</p></div>
+      </div>
+    </div>
+
+    <!-- Letter B -->
+    <div class="glossary-letter-section">
+      <h3 class="glossary-letter">B</h3>
+      <div class="glossary-card-grid">
+        <div class="glossary-card"><h4>👁️ Biometric</h4><p>Authentication using unique physical traits like fingerprints or facial recognition.</p></div>
+        <div class="glossary-card"><h4>🚫 Blacklist</h4><p>Blocked list of domains, IPs, or users due to malicious behavior.</p></div>
+        <div class="glossary-card"><h4>🔵 Blue Team</h4><p>Internal defense team protecting systems against cyber threats.</p></div>
+      </div>
+    </div>
+
+    <!-- Letter C -->
+    <div class="glossary-letter-section">
+      <h3 class="glossary-letter">C</h3>
+      <div class="glossary-card-grid">
+        <div class="glossary-card"><h4>🔐 Cybersecurity</h4><p>Protecting networks and data from unauthorized access and attacks.</p></div>
+        <div class="glossary-card"><h4>🧾 Credential</h4><p>Login details such as usernames and passwords for access control.</p></div>
+        <div class="glossary-card"><h4>☁️ Cloud Security</h4><p>Protecting cloud-based infrastructure and data from cyber risks.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📬 Contact Support Section -->
+  <div class="help-section-4-glossary-container animate-on-scroll">
+    <div class="help-section-4-glossary-wrapper">
+
+      <!-- Image and Support Text -->
+      <div class="contact-support-picture-panel-left">
+        <h3 class="help_text" style="font-size: 2em; margin-bottom: -20px;">Contact Support</h3>
+        <p class="help_text" style="color: rgb(164, 164, 164);">Fill in the form to get in touch</p>
+        <picture id="tech-support-image">
+          <source srcset="{{ url_for('static', filename='images/contact-support-image.png') }}" type="image/png+xml">
+          <img src="{{ url_for('static', filename='images/contact-support-image.png') }}" alt="people-looking-sad-image" />
+        </picture>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-support-user-input-forms">
+        <form>
+          <div id="form-name-container" style="width: 100%; margin-left: 3em;">
+            <div class="first-name-wrapper">
+              <h4>First Name</h4>
+              <input placeholder="Input text" style="width: 110%;" />
             </div>
-            
-            <div id="help-section-2-search-container" style="margin-top: 5em;">
-                <div class="help-section-2-search-wrapper">
-                    <input id="help-search" class="animate-on-scroll" placeholder="Search...">
-                    <div class="section2-text-container animate-on-scroll" style="margin-top: 2em;">
-                        <div class="section2-text-wrapper-1" >
-                        <h3 class="help_text">Getting Started</h3>
-                        <p class="help_text">Product security<br>Article on securing our products</p>
-                        </div>
-                        <div class="section2-text-wrapper-2 animate-on-scroll">
-                            <h3 class="help_text">Best Practices</h3>
-                            <p class="help_text">Data protection Policy<br>Policy governing data security measures.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="last-name-wrapper">
+              <h4>Last Name</h4>
+              <input placeholder="Input text" style="width: 110%;" />
             </div>
+          </div>
 
-            <div id="help-section-3-glossary-container">
-                <h2 class="help_text animate-on-scroll" style="text-align: center;">
-                    Glossary
-                </h2>
-                <div class="glossary-A glossary-text animate-on-scroll">
-                    <h3 class="help_text">A</h3>
-                    <p class="help_text">
-                        <b>Administrative Security:</b> Precautions taken to manage and mitigate risk within an organization, such as implementing policies and procedures.<br>
-                        <b>Anti-Malware:</b> Software designed to detect, prevent, and remove malicious software (malware) from computer systems and networks.<br>
-                        <b>Awareness Training:</b> Educational programs aimed at informing employees about security risks and safe practices to protect sensitive information.
-                    </p>
-                </div>
-                <div class="glossary-B glossary-text animate-on-scroll">
-                    <h3 class="help_text">B</h3>
-                    <p class="help_text"><b>Biometric:</b> Unique physical or behavioral characteristics used to identify individuals, such as fingerprints, facial recognition, or voice patterns.<br>
-                        <b>Blacklist:</b> A list of entities, such as IP addresses or domains, that are prohibited from accessing a system or network due to malicious activity.<br>
-                        <b>Blue Team:</b> The internal group responsible for defending an organization's information systems against cyber threats and attacks.
-                    </p>
+          <div class="form-email-container form-info">
+            <h4>Email</h4>
+            <input placeholder="example@mail.com" />
+          </div>
 
-                    
-                </div>
-                <div class="glossary-C glossary-text animate-on-scroll">
-                    <h3 class="help_text">C</h3>
-                    <p class="help_text"><b>Cybersecurity:</b> The practice of protecting computer systems, networks, and data from unauthorized access, attacks, and damage.<br>
-                    <b>Credential:</b> A set of information, such as a username and password, used to verify a user's identity and grant access to a system or account.<br>
-                    <b>Cloud Security:</b> Measures and protocols implemented to protect data and applications stored in cloud computing environments from cyber threats and unauthorized access.
-                </p>
-                </div>
-            </div>
-            <div class="help-section-4-glossary-container animate-on-scroll">
-                <div class="help-section-4-glossary-wrapper">
-                    <div class="contact-support-picture-panel-left">
-                        <h3 class="help_text" style="font-size: 2em; margin-bottom: -20px;">Contact Support</h3>
-                        <p class="help_text" style="color: rgb(164, 164, 164);" >Fill in the form to get in touch</p>
-                        <picture id="tech-support-image">
-                            <source srcset="{{ url_for('static', filename='images/contact-support-image.png' )}}" type="image/png+xml">
-                            <img src="{{ url_for('static', filename='images/contact-support-image.png' )}}" alt="people-looking-sad-image"/>
-                        </picture>
-                    </div>
-                    <div class="contact-support-user-input-forms ">
-                        <form>
-                            <div id="form-name-container" style="width: 100%; margin-left: 3em;">
-                                <div class="first-name-wrapper">
-                                    <h4>First Name</h4>
-                                    <input placeholder="Input text" style="width: 110%;">
-                                </div>
-                                <div class="last-name-wrapper">
-                                    <h4>Last Name</h4>
-                                    <input placeholder="Input text" style="width: 110%;">
-                                </div>
-                            </div>
-                            <div class="form-email-container form-info">
-                                <h4>Email</h4>
-                                <input placeholder="example@mail.com">
-                            </div>
-                                                     
-                            <div class="form-company-container form-info">
-                                <h4>Company</h4>
-                                <input placeholder="Input text">
-                            </div>
-                            <div class="form-topic-container form-info">
-                                <h4>Which topic best fits your needs?</h4>
-                                <input placeholder="Please Select">
-                            </div>
+          <div class="form-company-container form-info">
+            <h4>Company</h4>
+            <input placeholder="Input text" />
+          </div>
 
-                            <div class="form-topic-container">
-                                <h4>How can we help?</h4>
-                                <textarea placeholder="Please share more details for us to ignore"  rows="5" cols="52" style="resize: none;"></textarea>
-                            </div>
-                            <button id="submit-button">Submit</button>
-                            
-                        </form>
-                    </div>
+          <div class="form-topic-container form-info">
+            <h4>Which topic best fits your needs?</h4>
+            <input placeholder="Please Select" />
+          </div>
 
-                </div>
-            </div>
-        </div>
+          <div class="form-topic-container">
+            <h4>How can we help?</h4>
+            <textarea placeholder="Please share more details for us to ignore" rows="5" cols="52" style="resize: none;"></textarea>
+          </div>
 
+          <button id="submit-button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    {% endblock %}
+  <!-- 🔗 External Scripts -->
+  <script src="{{ url_for('static', filename='js/tutorial-popup.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/info-popup.js') }}"></script>
+</div>
+{% endblock %}

@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/report_builder.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/email_popup.css') }}" />
 </head>
 
 <body class="report-builder-body">
@@ -113,7 +114,7 @@
           </div>
         </div>
 
-   <section class="export-share-section">
+    <section class="export-share-section">
       <h2 class="export-share-title">Export & Share Options</h2>
       <div class="export-share-options">
         <div class="export-item">
@@ -135,32 +136,33 @@
       </div>
     </section>
 
-    <!-- 📧 Email Popup HTML -->
-    <div class="email-popup-overlay" style="display: none;">
-      <div class="email-popup">
-        <h2>📧 Send Report via Email</h2>
-        <label for="email">Recipient Email</label>
-        <input type="email" id="email" placeholder="example@example.com" />
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" placeholder="Report Subject" />
-        <label for="message">Message (optional)</label>
-        <textarea id="message" placeholder="Add a personal message..."></textarea>
-        <div class="popup-actions">
-          <button class="cancel-btn" type="button">Cancel</button>
-          <button class="send-btn" type="button">Send Email</button>
-        </div>
-      </div>
+    <!--  Email Popup HTML -->
+    <div class="email-popup-overlay" id="emailPopupOverlay" style="display: none;">
+  <div class="email-popup">
+    <h2>Send Report via Email</h2>
+    <label for="email">Recipient Email</label>
+    <input type="email" id="email" placeholder="example@example.com" /><br>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" placeholder="Report Subject" /><br>
+    <label for="message">Message (optional)</label>
+    <textarea id="message" placeholder="Add a personal message..."></textarea>
+    <div class="popup-actions">
+      <button class="cancel-btn" type="button">Cancel</button>
+      <button class="send-btn" type="button">Send Email</button>
     </div>
+  </div>
+</div>
 
   
- <!-- jsPDF CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- jsPDF CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <!-- Custom Scripts -->
-    <script src="{{ url_for('static', filename='js/send_email.js') }}?v={{ random() }}"></script>
-    <script src="{{ url_for('static', filename='js/share_link.js') }}?v={{ random() }}"></script>
+    <script src="{{ url_for('static', filename='js/send_email.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/share_link.js') }}"></script>
     <script src="{{ url_for('static', filename='js/export_pdf_csv.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/email_popup.js') }}?v={{ random() }}"></script>
+    <script src="{{ url_for('static', filename='js/email_popup.js') }}"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const popup = document.querySelector('.email-popup-overlay');

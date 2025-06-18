@@ -18,24 +18,69 @@
     align-items: center;
 }
 
-#tutorial-box-container{
-    width: 110%;
+.tutorial-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 0.5em;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap; 
+    margin-top: 2em;
 }
 
-.tut-box{
-    padding: 10px 20px;
-    gap:-2em;
-    align-items: center;
-    justify-content: space-around;
+.tut-box {
+    width: 18em;
+    background-color: #171A1FFF;
+    border-radius: 10px;
+    padding: 1.2em;
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
-    background-color: #171A1FFF;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+#help-section-2-search-container {
+  margin-top: 5em;
+  padding: 7em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.help-section-2-search-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+}
+
+.section2-button-box-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-top: 3em;
+}
+
+.section2-button-box {
+  width: 20em;
+  padding: 1.5em;
+  background-color: #171A1FFF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #2d2f4c;
+  box-shadow: 0 0 10px rgba(102, 82, 243, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.section2-button-box:hover {
+  transform: translateY(-4px);
+}
+
 
 .box-header-tag{
     margin-bottom: -1em;
@@ -60,19 +105,24 @@
 }
 
 
-.box-star-tut-button{
-    background-color: transparent;
-    padding: 0.7em 7em;
-    border: 1px solid #8182DBFF;
-    border-radius: 6px;
-    color: #8182DBFF;
-    transition: 0.2s ease-in-out color;
+.box-star-tut-button {
+  background-color: transparent;
+  color: #8182DB;
+  padding: 0.7em 2em;
+  border: 1px solid #8182DB;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 
-.box-star-tut-button:hover{
-    cursor: pointer;
-    color: aliceblue;
+.box-star-tut-button:hover {
+  cursor: pointer;
+  background-color: #8182DB;
+  color: white;
 }
+
 
 #help-section-2-search-container{
     padding: 7em;
@@ -211,26 +261,34 @@ h4{
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
-    padding-top: 60px; 
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
+    width: 100vw;
+    height: 100vh;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
     position: relative;
     margin: auto;
-    padding: 0;
-    width: fit-content;
-    max-width: 90%;
-    background-color: #fefefe;
-    border-radius: 8px;
+    padding: 2em;
+    background-color: #171A1FFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    border: 1px solid #2d2f4c;
+
+    width: 90%;
+    max-width: 1000px;
+    min-height: 600px; /* ✅ 창 높이 늘리기 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .close {
@@ -340,4 +398,12 @@ h4{
     margin-bottom: 1.5em;
     color: #c5c5e4;
     line-height: 1.4;
+}
+
+#youtube-frame {
+    width: 100%;
+    height: 560px; 
+    border: none;
+    border-radius: 10px;
+    max-width: 100%;
 }

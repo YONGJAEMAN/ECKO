@@ -5,6 +5,7 @@ from app.forms import LoginForm
 from app.models import User, Post
 import sqlalchemy as sa
 from urllib.parse import urlsplit
+import random
 
 @app.route('/index')
 @login_required
@@ -76,6 +77,8 @@ def risks():
     ]
     return render_template("risk_list.html", risks=risks)
     
+
 @app.route('/report_builder')
 def report_builder():
-    return render_template('report_builder.html', title='Report Builder')
+    return render_template('report_builder.html', title='Report Builder', random=random.random)
+
