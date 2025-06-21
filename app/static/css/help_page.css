@@ -363,10 +363,13 @@ h4{
 }
 
 .section2-button-box-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap; 
+  margin-top: 3em;
 }
 
 .section2-button-box {
