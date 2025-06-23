@@ -23,7 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 670px;
     max-width: 800px;
 }
 
@@ -180,4 +180,20 @@ form button:hover {
   border: 0;
   border-top: 1px solid #555;
   margin: 1rem 0;
+}
+
+.result-actions button {
+  margin: 0.5em 0.5em 0 0;
+  padding: 0.6em 1.2em;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+.result-actions button:hover {
+  background-color: #3730a3;
 }

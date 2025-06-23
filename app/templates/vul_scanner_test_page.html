@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +88,18 @@
       {% endif %}
     {% endwith %}
   </div>
-
+  <!-- ✅ Result Actions -->
+    <div class="result-actions" style="margin-top: 2em;">
+      <button id="btn-export-pdf">📄 Export to PDF</button>
+      <button id="btn-export-csv">📊 Export to CSV</button>
+      <button id="btn-share-email">✉️ Share via Email</button>
+      <button id="btn-share-link">🔗 Share via Link</button>
+    </div>
+    
   <script src="{{ url_for('static', filename='js/vul_scanner_test_page.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>
+
+{% endblock %}
